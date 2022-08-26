@@ -1,5 +1,8 @@
+import matplotlib
 import numpy as np
 import pandas as pd
+
+
 
 ##### NUMPY TESTS #####
 
@@ -52,6 +55,8 @@ tabla_autos = pd.DataFrame({'Tipo de auto':tipos_autos,'Color':colores})
 # tabla_autos.to_csv("prueba_export.csv")
 
 venta_de_autos = pd.read_csv("ventas-autos.csv")
+
+"""
 print(venta_de_autos.dtypes)
 print("\n")
 print(venta_de_autos.describe())
@@ -76,3 +81,43 @@ print(pd.crosstab(venta_de_autos['Fabricante'],venta_de_autos['Puertas']))
 print("\n")
 print(venta_de_autos.groupby(["Fabricante"]).mean())
 print("\n")
+"""
+
+
+##### MATPLOTLIB TESTS #####
+
+import matplotlib.pyplot as plt
+
+# plt.hist(venta_de_autos["Kilometraje"])
+# plt.show()
+
+# plt.plot(venta_de_autos["Precios (USD)"].str.replace("[\,\$\.]","").astype(int))
+# plt.show()
+
+"""
+a = list(range(101))
+b = []
+for numero in a:
+    b.append(numero**2)
+
+fig, ax = plt.subplots()
+
+ax.plot(a,b)
+ax.set(title="Ejemplo de Titulo", xlabel="label a", ylabel="label b")
+plt.show()
+fig.savefig("test-grafico.png")
+"""
+
+# gradico de dispercion
+# x = np.linspace(0,100,20)
+# y = x**2
+
+fig, ax = plt.subplots()
+
+x = np.linspace(-10,10,100)
+y = np.tan(x)
+
+
+ax.scatter(x,y)
+plt.show()
+
